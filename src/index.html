@@ -14,7 +14,7 @@
             <div class="tool" id = "pencil" ><img src="icons/Red_Pencil.svg"> 
                 <div class="tool-options inactive" >
                     <div class="pencil-size">
-                        <input type="range">
+                        <input type="range" min = '1' max = '40' value = '1'>
                     </div>
                     <div class="pencil-colour">
                         <div class="black"></div>
@@ -27,10 +27,10 @@
             <div class="tool" id = "eraser" ><img src="icons/Eraser.svg">
                 <div class="eraser-options inactive">
                     <div class="eraser-size">
-                        <input type="range">
+                        <input type="range" min = '1' max = '40' value = '1'>
                     </div>
                     <div class="delete">
-                        <i class="fas fa-trash" style="height:40px, width:50px"></i>
+                        <i class="fas fa-trash"></i>
                     </div>
                 </div>
             </div>
@@ -47,6 +47,7 @@
 
     <script src="script.js"></script>
     <script src="tools.js"></script>
+    <script src="undoRedo.js"></script>
     
 </body>
 </html>
