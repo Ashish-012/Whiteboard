@@ -47,7 +47,7 @@
     border: 1px solid lightgrey;
     height: 100px;
     width: 120px;
-    left:50px;
+    left: 50px;
     top: 50px;
     display: flex;
     flex-direction: column;
@@ -107,26 +107,90 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
 }
 
 .eraser-size {
     text-align: center;
-    
 }
-.delete{
-    text-align: center;   
+
+.delete {
+    text-align: center;
 }
 
 .eraser-size input {
     width: 80%;
 }
 
-.fas.fa-trash{
+.fas.fa-trash {
     color: red;
     font-size: 1.6rem;
     opacity: 0.8;
     /* transition: transform 0.5s; */
+}
+
+.sticky {
+    position: absolute;
+    width: 260px;
+    height: 186px;
+    top: 50%;
+    left: 50%;
+    outline: none;
+    box-shadow: 7px 10px 12px #39813d;
+   
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.sticky-nav {
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: darkgreen;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.minimise-sticky {
+    height: 80%;
+    background-color: lightgray;
+    width: 14%;
+    border-radius: 20px;
+    text-align: center;
+    background-color: lightblue;
+    margin-right: 2%;
+}
+
+.minimise-sticky:hover{
+    cursor: pointer;
+
+}
+
+.delete-sticky {
+    height: 80%;
+    background-color: red;
+    width: 14%;
+    border-radius: 20px;
+    text-align: center;
+    margin-right: 2%;
+}
+
+.delete-sticky:hover{
+    cursor: pointer;
+}
+.sticky-note {
+    width: 100%;
+    height: 85%;
+    border: 1px solid black;
+    border-top: none;
+    padding: 10%;
+    overflow: auto;
+    outline: none;
+    background-color: lightgreen;
+    color: darkblue;
+    
     
 }
 
