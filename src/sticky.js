@@ -1,15 +1,35 @@
 let sticky = document.querySelector("#stickynote");
 
-sticky.addEventListener("click",function(){
+sticky.addEventListener("click",appendSticky);
+
+function appendSticky(elem){
+
     let note = document.createElement("div");
-    note.innerHTML = `<div class="sticky-nav">
+    let isImage = false;
+    if(elem.classList){
+        isImage = true;
+        note.innerHTML = `<div class="sticky-nav">
+                        <div class="minimise-sticky">-</div>
+                        <div class="delete-sticky">x</div>
+                    </div>
+                    <div class="sticky-image" >
+                        
+                    </div>`
+        note.classList.add("sticky");
+        note.querySelector(".sticky-image").append(elem);
+    }
+    else{
+        note.innerHTML = `<div class="sticky-nav">
                         <div class="minimise-sticky">-</div>
                         <div class="delete-sticky">x</div>
                     </div>
                     <div class="sticky-note" contenteditable = "true">
                         
                     </div>`
-    note.classList.add("sticky");
+        note.classList.add("sticky");
+
+    }
+    
 
     document.querySelector('body').append(note);
 
@@ -19,15 +39,29 @@ sticky.addEventListener("click",function(){
 
     note.querySelector(".minimise-sticky").addEventListener("click", function(){
         let stickycss = document.querySelector(".sticky");
-        stickyContent = note.querySelector(".sticky-note");
-        if(stickyContent.classList.contains("inactive")){
-            stickyContent.classList.remove("inactive");
-            stickycss.style.boxShadow ="7px 10px 12px #39813d";
-        }  
-        else{    
-            stickyContent.classList.add("inactive");
-            stickycss.style.boxShadow ="none";
+        if(isImage){
+            stickyContent = note.querySelector(".sticky-image");
+            if(stickyContent.classList.contains("inactive")){
+                stickyContent.classList.remove("inactive");
+                stickycss.style.boxShadow ="7px 10px 12px #39813d";
+            }  
+            else{    
+                stickyContent.classList.add("inactive");
+                stickycss.style.boxShadow ="none";
+            }
         }
+        else{
+            stickyContent = note.querySelector(".sticky-note");
+            if(stickyContent.classList.contains("inactive")){
+                stickyContent.classList.remove("inactive");
+                stickycss.style.boxShadow ="7px 10px 12px #39813d";
+            }  
+            else{    
+                stickyContent.classList.add("inactive");
+                stickycss.style.boxShadow ="none";
+            }
+        }
+        
     })
     let noteHeader = note.querySelector(".sticky-nav");
     let isMouseDown = false;
@@ -62,7 +96,5 @@ sticky.addEventListener("click",function(){
     
     noteHeader.addEventListener("mouseup", function(e){
         isMouseDown = false;
-        console.log("done");
     })
-
-})
+}
