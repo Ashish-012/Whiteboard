@@ -5,6 +5,7 @@ let eraserToolOptions = document.querySelector(".eraser-options")
 let pencilSize = pencil.querySelector("input");
 let eraserSize = eraser.querySelector("input");
 let pencilColours = pencil.querySelectorAll(".pencil-colour div");
+let deleteAll = eraser.querySelector(".delete")
 
 let selectedTool = "pencil";
 
@@ -69,4 +70,11 @@ pencilSize.addEventListener("change", function(){
 eraserSize.addEventListener("change", function(){
     currentEraserSize = eraserSize.value;
     ctx.lineWidth = currentEraserSize;
+})
+
+deleteAll.addEventListener("click", function(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    db = [];
+    redoDB= [];
+    lines = [];
 })
