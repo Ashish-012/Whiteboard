@@ -35,16 +35,25 @@
     width: 15%;
     height: 80%;
     position: relative;
+ 
 }
+
 
 .tool img {
     width: 100%;
     height: 80%;
+    transition: 0.8s;
+}
+
+.tool img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 .tool-options {
     position: absolute;
     border: 1px solid lightgrey;
+    background-color: aliceblue;
     height: 100px;
     width: 120px;
     left: 50px;
@@ -52,8 +61,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    border-radius: 10px;
+    border-radius: 10px; 
 }
+
 
 .pencil-size {
     text-align: center;
@@ -100,6 +110,7 @@
     position: absolute;
     top: 50px;
     border: 1px solid lightgrey;
+    background-color: aliceblue;
     border-radius: 10px;
     height: 100px;
     width: 120px;
@@ -190,8 +201,25 @@
     outline: none;
     background-color: lightgreen;
     color: darkblue;
+}
+
+.uploaded-image{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+.sticky-image{
+    width: 100%;
+    height: 90%;
+    border-top: none;
+    overflow: auto;
+    outline: none;
     
-    
+}
+
+.opClass {
+    opacity:0.4;
 }
 
 .inactive {
