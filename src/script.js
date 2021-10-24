@@ -18,8 +18,14 @@ var ctx = canvas.getContext("2d");
 ctx.lineCap = "round";
 let isMouseDown = false;
 
+
+
 canvas.addEventListener("mousedown", function(e){
     redoDB = [];
+    
+    if(redoDB.length <1){
+        redo.classList.add("opClass");
+    }
     isMouseDown= true;
     let x = e.clientX
     let y =  e.clientY -60;
@@ -37,7 +43,9 @@ canvas.addEventListener("mousedown", function(e){
 })
 
 canvas.addEventListener("mousemove", function(e){
+
     if(isMouseDown){
+        
         let x = e.clientX
         let y =  e.clientY -60;
         ctx.lineTo(x,y);
@@ -55,4 +63,8 @@ canvas.addEventListener("mouseup", function(e){
     isMouseDown = false;
     db.push(lines);
     lines = []
+    if(db.length >0){
+        undo.classList.remove("opClass");
+    }
+    
 })
